@@ -18,31 +18,30 @@ func main() {
 	fmt.Print("Какую арифметическую операцию (+, -, *, /, √, ^, !) вы хотите выполнить? ")
 	fmt.Scanln(&op)
 
-	switch op {
-	case "!":
+	if op == "!" {
 		fmt.Print("Введите число: ")
 		fmt.Scanln(&d)
+	} else if op == "+" || op == "-" || op == "*" || op == "/" || op == "^" {
+		fmt.Print("Введите первое число: ")
+		fmt.Scanln(&a)
+		fmt.Print("Введите второе число: ")
+		fmt.Scanln(&b)
+	} else if op == "√" {
+		fmt.Print("Введите число: ")
+		fmt.Scanln(&c)
+	}
+
+	switch op {
+	case "!":
 		f.MulRange(1, d)
 		fmt.Print("Результат выполнения операции: ", f)
 	case "+":
-		fmt.Print("Введите первое число: ")
-		fmt.Scanln(&a)
-		fmt.Print("Введите второе число: ")
-		fmt.Scanln(&b)
 		res = a + b
 		fmt.Printf("Результат выполнения операции: %.2f\n", res)
 	case "-":
-		fmt.Print("Введите первое число: ")
-		fmt.Scanln(&a)
-		fmt.Print("Введите второе число: ")
-		fmt.Scanln(&b)
 		res = a - b
 		fmt.Printf("Результат выполнения операции: %.2f\n", res)
 	case "*":
-		fmt.Print("Введите первое число: ")
-		fmt.Scanln(&a)
-		fmt.Print("Введите второе число: ")
-		fmt.Scanln(&b)
 		if a == 0 {
 			fmt.Println("На 0 умножать нельзя")
 		} else if b == 0 {
@@ -51,10 +50,6 @@ func main() {
 		res = a * b
 		fmt.Printf("Результат выполнения операции: %.2f\n", res)
 	case "/":
-		fmt.Print("Введите первое число: ")
-		fmt.Scanln(&a)
-		fmt.Print("Введите второе число: ")
-		fmt.Scanln(&b)
 		if a == 0 {
 			fmt.Println("На 0 делить нельзя")
 		} else if b == 0 {
@@ -63,15 +58,9 @@ func main() {
 		res = a / b
 		fmt.Printf("Результат выполнения операции: %.2f\n", res)
 	case "√":
-		fmt.Print("Введите число: ")
-		fmt.Scanln(&c)
 		res = math.Sqrt(c)
 		fmt.Printf("Результат выполнения операции: %.2f\n", res)
 	case "^":
-		fmt.Print("Введите первое число: ")
-		fmt.Scanln(&a)
-		fmt.Print("Введите второе число: ")
-		fmt.Scanln(&b)
 		res = math.Pow(a, b)
 		fmt.Printf("Результат выполнения операции: %.2f\n", res)
 
