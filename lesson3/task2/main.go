@@ -17,13 +17,12 @@ func main() {
 		f = false
 		for q = 2; q <= a/2; q++ {
 
-			if a%q == 0 {
-				f = true
+			if f == false {
+				fmt.Println("Простые числа: ", a)
+				break
 			}
 		}
-		if f == false {
-			fmt.Println("Простые числа: ", a)
-		}
+
 	}
 
 }
